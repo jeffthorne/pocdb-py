@@ -1,0 +1,20 @@
+.idea/
+.Python
+__pycache__/
+venv/
+reports/
+*DS_Store
+bin/
+include/
+lib/
+share/
+#test dir temporarily ignored
+test/
+pip-selfcheck.json
+
+# Compiled python modules.
+*.pyc
+
+docs/build
+tests/
+test.py
