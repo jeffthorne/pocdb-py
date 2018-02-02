@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='pocdb-py',
-      version='0.3',
+      version='0.4',
       description='pocdb.com Python SDK',
       url='https://github.com/jeffthorne/pocdb-py',
       author='Jeff Thorne',

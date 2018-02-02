@@ -1,6 +1,7 @@
 README.md
 setup.py
 pocdb/__init__.py
+pocdb/models/__init__.py
 pocdb/models/api.py
 pocdb/utils/__init__.py
 pocdb_py.egg-info/PKG-INFO

@@ -14,7 +14,7 @@ from requests.auth import HTTPBasicAuth
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 headers = {'Content-Type': 'application/json'}
-host = "https://pocdb.com"
+host = "https://www.pocdb.com"
 
 class API:
 
