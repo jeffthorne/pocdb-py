@@ -23,7 +23,7 @@ Installation
 
 Getting Started
 ---------------
-Start by creating a DSM manager object. This manager represents the DSM API endpoint
+Start by creating an API object. This API represents the POCdb API endpoint.
 
 .. code-block:: python
 
