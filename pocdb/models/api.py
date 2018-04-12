@@ -60,11 +60,11 @@ class API:
 
 
 
-    def pocs(self, region: str) -> List[str]:
+    def pocs(self, region: [str]) -> List[str]:
         """
 
-        :param region: pocdb org region
-        :return:
+        :param region: pocdb org region or list of regions to retrieve pocs/opportutnies for
+        :return: array of poc objects
         """
         url = "{}/api/{}/pocs".format(self.host, self.api_version)
         data = dict(region=region)
@@ -82,7 +82,7 @@ class API:
         return json.loads(response.content)
 
 
-    def pocs_by_product(self, product: str, region:str = 'all') -> List[str]:
+    def pocs_by_product(self, product: [str], region:str = 'all') -> List[str]:
         """
         :param product:
         :param region:
