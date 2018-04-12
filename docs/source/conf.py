@@ -1,3 +1,6 @@
+import sys
+import os
+
 # -*- coding: utf-8 -*-
 #
 # Configuration file for the Sphinx documentation builder.
@@ -28,6 +31,7 @@ version = ''
 # The full version, including alpha/beta/rc tags
 release = '0.1'
 
+sys.path.insert(0, os.path.abspath('../..'))
 
 # -- General configuration ---------------------------------------------------
 
