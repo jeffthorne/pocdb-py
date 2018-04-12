@@ -34,6 +34,6 @@ Start by creating a DSM manager object. This manager represents the DSM API endp
    regions = ['region1', 'region2']
    products = ['product1', 'product2']
 
-   pocs = api.pocs_by_product(products, regions)  #pocs by product and region
-   pocs = api.pocs(regions)  #poc by region
+   pocs = api.pocs_by_product(products, regions)  #pocs by product and regions
+   pocs = api.pocs(regions)  #poc by regions
 
