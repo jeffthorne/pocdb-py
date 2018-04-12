@@ -29,8 +29,13 @@ Start by creating a DSM manager object. This manager represents the DSM API endp
 
    from pocdb.models.api import API
 
-   api = API(email=email, password=password, host="https://www.pocdb.com", api_version='v1', verify_cert=False)
-   pocs = api.pocs_by_product(product, region)
+   api = API(email=email, password=password)
+
+   regions = ['region1', 'region2']
+   products = ['product1', 'product2']
+
+   pocs = api.pocs_by_product(products, regions)  #pocs by product and region
+   pocs = api.pocs(regions)  #poc by region
 
 
 
