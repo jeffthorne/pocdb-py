@@ -11,10 +11,19 @@ share/
 #test dir temporarily ignored
 test/
 pip-selfcheck.json
+/dist/
 
 # Compiled python modules.
 *.pyc
 
 docs/build
 tests/
+test2
 test.py
+
+# Python egg metadata, regenerated from source files by setuptools.
+pip list
+docs/build
+tests/
+venv/
+*DS_Store

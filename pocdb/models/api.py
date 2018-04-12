@@ -14,13 +14,24 @@ from requests.auth import HTTPBasicAuth
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 headers = {'Content-Type': 'application/json'}
-host = "https://www.pocdb.com"
+
 
 class API:
 
-    def __init__(self, email: str, password: str, api_version:str = 'v1'):
+    def __init__(self, email: str, password: str, host:str="https://pocdb.com", api_version:str = 'v1', verify_cert=True):
+        """
+
+        :param email:
+        :param password:
+        :param host:
+        :param api_version:
+        :param verify_cert:
+
+
+        """
         self.api_version = api_version
-        self.verify = True
+        self.verify = verify_cert
+        self.host = host
 
         try:
             self.auth_token = self.__authenticate(email, password)
@@ -36,10 +47,8 @@ class API:
             sys.exit()
 
 
-
-
     def __authenticate(self, email:str, password:str) -> bool:
-        url = "{}/api/{}/login".format(host, self.api_version)
+        url = "{}/api/{}/login".format(self.host, self.api_version)
         data = dict(email=email, password=password)
         json_response = json.loads(requests.post(url, data=json.dumps(data), verify=self.verify, headers=headers).content)
 
@@ -52,20 +61,34 @@ class API:
 
 
     def pocs(self, region: str) -> List[str]:
-        url = "{}/api/{}/pocs".format(host, self.api_version)
+        """
+
+        :param region: pocdb org region
+        :return:
+        """
+        url = "{}/api/{}/pocs".format(self.host, self.api_version)
         data = dict(region=region)
         response = requests.post(url, data=json.dumps(data), verify=self.verify, headers=headers, auth=HTTPBasicAuth(self.auth_token, ''))
         json_response = json.loads(response.content)
         return json_response
 
     def salesreps(self) -> List[str]:
-        url = "{}/api/{}/salesreps".format(host, self.api_version)
+        """
+
+        :return:
+        """
+        url = "{}/api/{}/salesreps".format(self.host, self.api_version)
         response = requests.get(url, verify=self.verify, headers=headers, auth=HTTPBasicAuth(self.auth_token, ''))
         return json.loads(response.content)
 
 
     def pocs_by_product(self, product: str, region:str = 'all') -> List[str]:
-        url = "{}/api/{}/pocs/product".format(host, self.api_version)
+        """
+        :param product:
+        :param region:
+        :return:
+        """
+        url = "{}/api/{}/pocs/product".format(self.host, self.api_version)
         data = dict(product=product, region=region)
         response = requests.post(url, data=json.dumps(data), verify=self.verify, headers=headers, auth=HTTPBasicAuth(self.auth_token, ''))
         json_response = json.loads(response.content)
