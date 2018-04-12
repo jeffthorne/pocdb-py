@@ -23,7 +23,7 @@ class API:
 
         :param email:
         :param password:
-        :param host:
+        :param host: can be ignored.
         :param api_version: can be ignored
         :param verify_cert: can be ignored
 
