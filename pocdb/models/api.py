@@ -75,7 +75,7 @@ class API:
     def salesreps(self) -> List[str]:
         """
 
-        :return:
+        :return: a list of sales reps assocated with the organization
         """
         url = "{}/api/{}/salesreps".format(self.host, self.api_version)
         response = requests.get(url, verify=self.verify, headers=headers, auth=HTTPBasicAuth(self.auth_token, ''))
