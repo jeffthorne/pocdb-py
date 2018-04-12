@@ -6,7 +6,7 @@
 Welcome to pocdb-py
 ====================================
 
-A Python 3 client for the pocdb Platform.
+A Python 3 client for the POCdb Platform.
 
 
 Installation
