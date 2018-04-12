@@ -37,12 +37,3 @@ Start by creating a DSM manager object. This manager represents the DSM API endp
    pocs = api.pocs_by_product(products, regions)  #pocs by product and region
    pocs = api.pocs(regions)  #poc by region
 
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
