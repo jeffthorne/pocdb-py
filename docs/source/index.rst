@@ -3,11 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to pocdb-py's documentation!
+Welcome to pocdb-py
 ====================================
 
-
 A Python 3 client for the pocdb Platform.
+
 
 Installation
 ------------
