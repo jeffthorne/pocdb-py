@@ -1,0 +1,7 @@
+name: py35
+dependencies:
+- python=3.5.2
+
+- pip:
+  - requests>=2.9.1
+  - suds-py3>=1.2.0.0
