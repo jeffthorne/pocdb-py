@@ -27,3 +27,5 @@ docs/build
 tests/
 venv/
 *DS_Store
+pocdb_py.egg-info/
+.vscode/

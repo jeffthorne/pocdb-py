@@ -82,15 +82,21 @@ class API:
         return json.loads(response.content)
 
 
-    def pocs_by_product(self, product: [str], region:str = 'all') -> List[str]:
+    def pocs_by_product(self, product: [str], region:str = 'all', hide_outcomes=True) -> List[str]:
         """
         :param product:
         :param region:
         :return:
         """
         url = "{}/api/{}/pocs/product".format(self.host, self.api_version)
-        data = dict(product=product, region=region)
+        data = dict(product=product, region=region, hide_outcomes=hide_outcomes)
         response = requests.post(url, data=json.dumps(data), verify=self.verify, headers=headers, auth=HTTPBasicAuth(self.auth_token, ''))
         json_response = json.loads(response.content)
         return json_response
 
+    def pocs_closed(self, start_date: str, end_date: str, regions:[List] = None) -> List[str]:
+        url = "{}/api/{}/pocs/closed".format(self.host, self.api_version)
+        data = dict(start_date=start_date, end_date=end_date, regions=regions)
+        response = requests.post(url, data=json.dumps(data), verify=self.verify, headers=headers, auth=HTTPBasicAuth(self.auth_token, ''))
+        json_response = json.loads(response.content)
+        return json_response
